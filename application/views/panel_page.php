@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 include('layouts/header.php');
 ?>
 <nav class="nav nav-pills nav-fill">
-  <a class="nav-item nav-link active" href="#">Home page</a>
+  <a class="nav-item nav-link active" href="panel">Home page</a>
   <a class="nav-item nav-link disabled" href="panel/logout">Logout</a>
 </nav>
 

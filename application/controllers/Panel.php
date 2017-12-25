@@ -11,7 +11,7 @@ class Panel extends CI_Controller {
     public function index()
     {
         if($this->session->userdata('admin') != 'ok')
-          redirect(base_url().'home', 'location', 301);
+          redirect('home', 'location', 301);
         else
           $this->load->model('PanelModel');
           $data['result'] = $this->PanelModel->get_users_admin();
