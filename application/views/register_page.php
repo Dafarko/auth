@@ -6,23 +6,23 @@ include('layouts/header.php');
 <div class="row">
     <div class="col-2"></div>
     <div class="col-8">
-        <form>
+        <form action="register/reg" method="post">
             <div class="form-group">
                 <label for="fname">Your First Name</label>
-                <input type="text" class="form-control" id="fname" placeholder="Enter your First Name">
+                <input type="text" class="form-control" name ="fname" id="fname" placeholder="Enter your First Name">
             </div>
             <div class="form-group">
                 <label for="lname">Your Last Name</label>
-                <input type="text" class="form-control" id="lname" placeholder="Enter your Last Name">
+                <input type="text" class="form-control" name ="lname" id="lname" placeholder="Enter your Last Name">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                <input type="email" class="form-control" name ="email" id="email" aria-describedby="emailHelp" placeholder="Enter email">
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
                 <label for="password1">Password</label>
-                <input type="password" class="form-control" id="password1" placeholder="Password">
+                <input type="password" class="form-control" name ="password1" id="password1" placeholder="Password">
             </div>
             <div class="form-group">
                 <label for="password2">Confirm Password</label>

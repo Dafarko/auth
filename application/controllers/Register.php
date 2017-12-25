@@ -6,4 +6,8 @@ class Register extends CI_Controller {
     {
         $this->load->view('register_page');
     }
+    public function reg(){
+      $this->load->model('RegisterModel');
+      $this->RegisterModel->reg_user();
+    }
 }
