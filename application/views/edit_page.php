@@ -3,8 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 include('layouts/header.php');
 ?>
 <nav class="nav nav-pills nav-fill">
-  <a class="nav-item nav-link active" href="http://auth/panel">Main Panel</a>
-  <a class="nav-item nav-link disabled" href="http://auth/panel/logout">Logout</a>
+  <a class="nav-item nav-link active" href="panel">Main Panel</a>
+  <a class="nav-item nav-link disabled" href="panel/logout">Logout</a>
 </nav>
 <h1 align="center">Sign in. ULS.</h1>
 <div class="row">

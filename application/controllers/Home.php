@@ -22,10 +22,10 @@ class Home extends CI_Controller {
 		if(($this->input->post('email') != 'test@gmail.com') || ($this->input->post('password') != '111'))
 		{
 			$this->session->set_userdata('message','Error. Email or Password was introduced wrong');
-			redirect('http://auth/panel');
+			redirect('panel');
 		}
 		else
 			$this->session->set_userdata('admin', 'ok');
-			redirect('http://auth/panel', 'location', 301);
+			redirect('panel', 'location', 301);
 	}
 }

@@ -35,7 +35,7 @@ include('layouts/header.php');
                 <input type="password" class="form-control" name ="password2" id="password2" placeholder="Password">
             </div>
             <input type="submit" class="btn btn-primary" value="Submit">
-            <a href="http://auth/home" class="btn btn-primary">Sign in</a>
+            <a href="home" class="btn btn-primary">Sign in</a>
         </form>
     </div>
 </div>

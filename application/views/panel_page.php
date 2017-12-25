@@ -4,7 +4,7 @@ include('layouts/header.php');
 ?>
 <nav class="nav nav-pills nav-fill">
   <a class="nav-item nav-link active" href="#">Home page</a>
-  <a class="nav-item nav-link disabled" href="http://auth/panel/logout">Logout</a>
+  <a class="nav-item nav-link disabled" href="panel/logout">Logout</a>
 </nav>
 
 <h1 align="center">All users. ULS.</h1>
