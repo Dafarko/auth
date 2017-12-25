@@ -8,7 +8,12 @@ include('layouts/header.php');
 </nav>
 
 <h1 align="center">All users. ULS.</h1>
-
+<?php
+  if (!empty($this->session->userdata('ok'))){?>
+    <div class="alert alert-success" role="alert">
+      <?=$this->session->userdata('ok')?>
+    </div>
+<?php $this->session->unset_userdata('ok'); }?>
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -17,29 +22,21 @@ include('layouts/header.php');
       <th scope="col">Last Name</th>
       <th scope="col">Email</th>
       <th scope="col">Group</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>admin</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td>admin</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-      <td>admin</td>
+      <?php foreach ($result as $user) {?>
+        <td><?=$user->id?></td>
+        <td><?=$user->first_name?></td>
+        <td><?=$user->last_name?></td>
+        <td><?=$user->email?></td>
+        <td><?php if($user->group=='A') echo 'Admin'; else echo 'Guest';?></td>
+        <td><a href="panel/edit/<?=$user->id?>">Edit</a></td>
+        <td><a href="panel/delete/<?=$user->id?>">Delete</a></td>
+      <?php }?>
     </tr>
   </tbody>
 </table>
