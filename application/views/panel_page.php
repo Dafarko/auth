@@ -27,8 +27,8 @@ include('layouts/header.php');
     </tr>
   </thead>
   <tbody>
+    <?php foreach ($result as $user) {?>
     <tr>
-      <?php foreach ($result as $user) {?>
         <td><?=$user->id?></td>
         <td><?=$user->first_name?></td>
         <td><?=$user->last_name?></td>
@@ -36,8 +36,8 @@ include('layouts/header.php');
         <td><?php if($user->group=='A') echo 'Admin'; else echo 'Guest';?></td>
         <td><a href="panel/edit/<?=$user->id?>">Edit</a></td>
         <td><a href="panel/delete/<?=$user->id?>">Delete</a></td>
-      <?php }?>
     </tr>
+    <?php }?>
   </tbody>
 </table>
 
