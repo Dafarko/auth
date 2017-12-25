@@ -21,7 +21,7 @@ class Home extends CI_Controller {
 		$this->session->set_userdata('admin','');
 		if(($this->input->post('email') != 'test@gmail.com') || ($this->input->post('password') != '111'))
 		{
-			$this->session->set_userdata('message','error');
+			$this->session->set_userdata('message','Error. Email or Password was introduced wrong');
 			redirect('http://auth/panel');
 		}
 		else

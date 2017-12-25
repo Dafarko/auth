@@ -10,8 +10,14 @@ class RegisterModel extends CI_Model {
             $this->last_name = $this->input->post('lname');
             $this->email = $this->input->post('email');
             $this->password = $this->input->post('password1');
-
-            $this->db->insert('users', $this);
+            $password1 = $this->input->post('password2');
+            if($this->password != $password1){
+              $this->session->set_userdata('message','Your confirm password was wrong!!!');
+              redirect('http://auth/register');
+            }
+            if($query = $this->db->insert('users', $this))
+              $this->session->set_userdata('ok','You have been registered on our website!!!');
+              redirect('http://auth/home');
         }
 }
 ?>

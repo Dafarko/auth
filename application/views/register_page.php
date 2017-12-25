@@ -6,6 +6,12 @@ include('layouts/header.php');
 <div class="row">
     <div class="col-2"></div>
     <div class="col-8">
+        <?php
+          if (!empty($this->session->userdata('message'))){?>
+            <div class="alert alert-danger" role="alert">
+              <?=$this->session->userdata('message')?>
+            </div>
+        <?php $this->session->unset_userdata('message'); }?>
         <form action="register/reg" method="post">
             <div class="form-group">
                 <label for="fname">Your First Name</label>
@@ -26,7 +32,7 @@ include('layouts/header.php');
             </div>
             <div class="form-group">
                 <label for="password2">Confirm Password</label>
-                <input type="password" class="form-control" id="password2" placeholder="Password">
+                <input type="password" class="form-control" name ="password2" id="password2" placeholder="Password">
             </div>
             <input type="submit" class="btn btn-primary" value="Submit">
             <a href="http://auth/home" class="btn btn-primary">Sign in</a>

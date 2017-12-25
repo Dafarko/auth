@@ -7,11 +7,17 @@ include('layouts/header.php');
         <div class="col-2"></div>
         <div class="col-8">
             <?php
-              if ($this->session->userdata('message') == 'error'){?>
+              if (!empty($this->session->userdata('message'))){?>
                 <div class="alert alert-danger" role="alert">
-                  Error. Email or Password was incorect!!!
+                  <?=$this->session->userdata('message')?>
                 </div>
-            <?php }?>
+            <?php $this->session->unset_userdata('message'); }?>
+            <?php
+              if (!empty($this->session->userdata('ok'))){?>
+                <div class="alert alert-success" role="alert">
+                  <?=$this->session->userdata('ok')?>
+                </div>
+            <?php $this->session->unset_userdata('ok'); }?>
             <form method="post" action="home/verif">
                 <div class="form-group">
                     <label for="email">Email address</label>
