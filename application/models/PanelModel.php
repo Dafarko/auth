@@ -4,7 +4,11 @@ class PanelModel extends CI_Model {
           $query = $this->db->query("SELECT *
                                      FROM users
                                      WHERE email = '$email' AND password = '$password'");
-          if($query->result()) return true;
+          if($query->result()){
+            if($query->result()[0]->group == 'A')
+              $this->session->set_userdata('group', 'admin');
+            return true;
+          }
           else return false;
         }
         public function get_users_admin(){

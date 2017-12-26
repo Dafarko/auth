@@ -19,9 +19,12 @@ class Panel extends CI_Controller {
     }
     public function logout(){
       $this->session->unset_userdata('admin');
+      $this->session->unset_userdata('group');
       redirect('home', 'location', 301);
     }
     public function edit(){
+      if($this->session->userdata('group') != 'admin') redirect('404');
+
       $id = $this->uri->segment(3);
       $this->load->model('PanelModel');
       $data['result'] = $this->PanelModel->get_one_user($id);
@@ -30,6 +33,8 @@ class Panel extends CI_Controller {
       //redirect('http://auth/panel', 'location', 301);
     }
     public function delete(){
+      if($this->session->userdata('group') != 'admin') redirect('404');
+
       $id = $this->uri->segment(3);
       $this->load->model('PanelModel');
       $this->PanelModel->delete_user($id);

@@ -22,8 +22,12 @@ include('layouts/header.php');
       <th scope="col">Last Name</th>
       <th scope="col">Email</th>
       <th scope="col">Group</th>
-      <th scope="col">Edit</th>
-      <th scope="col">Delete</th>
+      <?php
+          if($this->session->userdata('group') == 'admin'){
+            echo "<th scope='col'>Edit</th>";
+            echo "<th scope='col'>Delete</th>";
+          }
+      ?>
     </tr>
   </thead>
   <tbody>
@@ -34,8 +38,11 @@ include('layouts/header.php');
         <td><?=$user->last_name?></td>
         <td><?=$user->email?></td>
         <td><?php if($user->group=='A') echo 'Admin'; else echo 'Guest';?></td>
-        <td><a href="panel/edit/<?=$user->id?>">Edit</a></td>
-        <td><a href="panel/delete/<?=$user->id?>">Delete</a></td>
+        <?php if($this->session->userdata('group') == 'admin'){
+                echo "<td><a href='panel/edit/$user->id'>Edit</a></td>";
+                echo "<td><a href='panel/delete/$user->id'>Delete</a></td>";
+              }
+        ?>
     </tr>
     <?php }?>
   </tbody>
