@@ -18,7 +18,7 @@ include('layouts/header.php');
                   <?=$this->session->userdata('ok')?>
                 </div>
             <?php $this->session->unset_userdata('ok'); }?>
-            <form method="post" action="home/verif">
+            <form method="post" action="home/check">
                 <div class="form-group">
                     <label for="email">Email address</label>
                     <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email">

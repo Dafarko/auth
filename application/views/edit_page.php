@@ -16,8 +16,9 @@ include('layouts/header.php');
               <?=$this->session->userdata('message')?>
             </div>
         <?php $this->session->unset_userdata('message'); }?>
-        <form action="register/reg" method="post">
+        <form action="/panel/edit_action" method="post">
             <?php foreach ($result as $res) {?>
+            <input type="hidden" name ="id" id="id" value="<?=$res->id?>">
             <div class="form-group">
                 <label for="fname">First Name</label>
                 <input type="text" class="form-control" name ="fname" id="fname" placeholder="Enter your First Name" value="<?=$res->first_name?>">
